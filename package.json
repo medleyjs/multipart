@@ -1,0 +1,53 @@
+{
+  "name": "@medley/multipart",
+  "version": "0.0.1",
+  "description": "Medley plugin for parsing 'multipart/form-data' bodies",
+  "author": "Nathan Woltman <nwoltman@outlook.com>",
+  "license": "MIT",
+  "main": "multipart.js",
+  "files": [
+    "multipart.js",
+    "lib"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medleyjs/multipart.git"
+  },
+  "homepage": "https://github.com/medleyjs/multipart",
+  "bugs": {
+    "url": "https://github.com/medleyjs/multipart/issues"
+  },
+  "keywords": [
+    "medley",
+    "plugin",
+    "multipart",
+    "form-data",
+    "form",
+    "post"
+  ],
+  "dependencies": {
+    "append-field": "^1.0.0",
+    "busboy": "~0.2.14",
+    "on-finished": "^2.3.0"
+  },
+  "devDependencies": {
+    "@medley/medley": "~0.8.0",
+    "@nwoltman/eslint-config": "~0.1.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.7.0",
+    "form-data": "^2.3.3",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "proxyquire": "^2.1.0",
+    "testdata-w3c-json-form": "~0.2.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "nyc --reporter=html --reporter=text-summary mocha",
+    "test-ci": "npm run lint && npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  }
+}

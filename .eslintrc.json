@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": "@nwoltman/eslint-config",
+  "overrides": [
+    {
+      "files": ["test/*.test.js"],
+      "env": {
+        "mocha": true
+      },
+      "rules": {
+        "max-len": 0,
+        "max-nested-callbacks": 0,
+        "prefer-arrow-callback": 0
+      }
+    }
+  ]
+}
