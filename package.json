@@ -1,6 +1,6 @@
 {
   "name": "@medley/multipart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Medley plugin for parsing 'multipart/form-data' bodies",
   "author": "Nathan Woltman <nwoltman@outlook.com>",
   "license": "MIT",
