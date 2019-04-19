@@ -34,13 +34,13 @@
     "on-finished": "^2.3.0"
   },
   "devDependencies": {
-    "@medley/medley": "~0.8.0",
-    "@nwoltman/eslint-config": "~0.1.0",
-    "coveralls": "^3.0.2",
-    "eslint": "^5.7.0",
+    "@medley/medley": "~0.10.0",
+    "@nwoltman/eslint-config": "~0.2.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
     "form-data": "^2.3.3",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0",
     "proxyquire": "^2.1.0",
     "testdata-w3c-json-form": "~0.2.1"
   },
