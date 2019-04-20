@@ -46,8 +46,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "nyc --reporter=html --reporter=text-summary mocha",
-    "test-ci": "npm run lint && npm test",
+    "test-only": "nyc --reporter=html --reporter=text-summary mocha",
+    "test": "npm run lint && npm run test-only",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   }
 }

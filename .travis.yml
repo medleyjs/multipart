@@ -3,7 +3,6 @@ node_js:
   - '11'
   - '10'
   - '8'
-script: npm run test-ci
 after_success: npm run coveralls
 stages:
   - test
@@ -14,9 +13,11 @@ jobs:
     - stage: npm release
       install: skip
       script: skip
-      after_success: skip
+      after_success: true # skip step with success exit code
       deploy:
         provider: npm
         email: nwoltman@outlook.com
+        on:
+          tags: true
         api_key:
           secure: TDvyHHzuA0Sdlc4E/yJyxNFZFCcR7xOr9uH3PTEzfHAfxDLPkORdhpkHetXr0QjYB55DZzIXlTXtXauEjQcLOQI5GACRri3BGhMlVRPhr9TB2Yo0fUW+v0hi6iG7pDuHDpnjvl66KDYygQWQBRe82w1pOypUPEBlHTzGO3ge1GFs7H2mWTQTo9DE4PPneXxWBNYJh8UO41inmaBdV/qK0GYEwWSYJU6L0ztze7u+x3/AYZsP2egqTD5CNs8vgvJMtu+YZKU52hfxf/ApliLb6c30K3ojFuLo8yaAhvUK43u9oh51BqDwGNWe/w1zPDtIdZB0DAuACxDb+vZK2nzlA9zKgt+X32JpIl711lbK9LUTgKeu+beBuTAXS4qgidSUf4yIsfey62hP00aJKwbRzhg5rAaWpiartaCWdb/EBtIReD0FDA3s0eoxC7W/0QBXWkw1jjoaUbgCeyoGR1vCS0bezOgb1Tk5UwWudBvt1Y6jsMLqR6qqZMsEheYw1FNPxna8N7tBhcZFUgowFMUqK7eP5xm/L3ENrq53BSHKDAhsoAtDzR6WV/5Vlvu6KgC1b0QofVbB5fm3ZoI338M+GXOsiDQdwJesL79K0oHjMM5NdhgLCClvyQChAFG1heuOmOYsNk4URRc7GrZGPmqexuJQclBy5UvHP+6exluindg=
