@@ -122,12 +122,12 @@ describe('Medley Integration', () => {
       assert.fail('The route handler should not be called');
     });
 
-    app.setErrorHandler((err, req, res) => {
+    app.addHook('onError', (err, req, res) => {
       assert.deepStrictEqual(err, new MultipartError('LIMIT_FILE_SIZE', 'bigFile'));
       assert.deepStrictEqual(req.body, undefined);
       assert.deepStrictEqual(req.files, undefined);
 
-      res.send('');
+      res.status(err.status).send('');
     });
 
     request(app, form, (err, res) => {

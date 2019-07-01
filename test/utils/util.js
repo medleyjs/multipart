@@ -16,9 +16,6 @@ function makeMockApp() {
     decorateRequest() {
       // Mock does nothing
     },
-    addBodyParser() {
-      // Mock does nothing
-    },
   };
 }
 

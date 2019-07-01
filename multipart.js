@@ -5,7 +5,6 @@ const makeHook = require('./lib/makeHook');
 function multipart(app, options) {
   const globalOpts = options || {};
 
-  app.addBodyParser('multipart/form-data', (req, done) => done(null, undefined));
   app.decorateRequest('files', undefined);
 
   // eslint-disable-next-line no-shadow
@@ -77,9 +76,7 @@ multipart.discardFiles = function discardFiles(files) {
     }
   }
 };
+
 multipart.MultipartError = require('./lib/MultipartError');
-multipart.meta = {
-  name: '@medley/multipart',
-};
 
 module.exports = multipart;

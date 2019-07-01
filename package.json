@@ -34,7 +34,7 @@
     "on-finished": "^2.3.0"
   },
   "devDependencies": {
-    "@medley/medley": "~0.11.0",
+    "@medley/medley": "~0.12.0",
     "@nwoltman/eslint-config": "~0.2.1",
     "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
