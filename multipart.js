@@ -5,10 +5,10 @@ const makeHook = require('./lib/makeHook');
 function multipart(app, options) {
   const globalOpts = options || {};
 
-  app.decorateRequest('files', undefined);
+  app.extendRequest('files', undefined);
 
   // eslint-disable-next-line no-shadow
-  app.decorate('multipart', function multipart(expectedFiles, opts) {
+  app.extend('multipart', function multipart(expectedFiles, opts) {
     const {fileLimits, requiredFiles} = formatExpectedFiles(expectedFiles);
 
     opts = Object.assign({preservePath: globalOpts.preservePath}, opts, {

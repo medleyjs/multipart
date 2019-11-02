@@ -10,10 +10,10 @@ const os = require('os');
 
 function makeMockApp() {
   return {
-    decorate(name, value) {
+    extend(name, value) {
       this[name] = value;
     },
-    decorateRequest() {
+    extendRequest() {
       // Mock does nothing
     },
   };
