@@ -69,8 +69,11 @@ function assertTempFilesWereDeleted(done) {
       assert.ifError(err);
 
       files.forEach((fileName) => {
-        assert.strictEqual(/^multipart\..*\.tmp$/.test(fileName), false,
-          fileName + ' file was not deleted');
+        assert.strictEqual(
+          /^multipart\..*\.tmp$/.test(fileName),
+          false,
+          fileName + ' file was not deleted'
+        );
       });
 
       done();

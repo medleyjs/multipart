@@ -12,14 +12,9 @@
   "engines": {
     "node": ">=8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/medleyjs/multipart.git"
-  },
+  "repository": "github:medleyjs/multipart",
   "homepage": "https://github.com/medleyjs/multipart",
-  "bugs": {
-    "url": "https://github.com/medleyjs/multipart/issues"
-  },
+  "bugs": "https://github.com/medleyjs/multipart/issues",
   "keywords": [
     "medley",
     "plugin",
@@ -28,6 +23,19 @@
     "form",
     "post"
   ],
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "nyc": {
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "check-coverage": true,
+    "branches": 100,
+    "lines": 100,
+    "statements": 100
+  },
   "dependencies": {
     "append-field": "^1.0.0",
     "busboy": "~0.3.1",
@@ -35,19 +43,19 @@
   },
   "devDependencies": {
     "@medley/medley": "~0.12.0",
-    "@nwoltman/eslint-config": "~0.2.1",
-    "coveralls": "^3.0.4",
-    "eslint": "^5.16.0",
-    "form-data": "^2.4.0",
-    "mocha": "^6.1.4",
+    "@nwoltman/eslint-config": "~0.5.1",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "form-data": "^2.5.1",
+    "mocha": "^6.2.2",
     "nyc": "^14.1.1",
-    "proxyquire": "^2.1.0",
+    "proxyquire": "^2.1.3",
     "testdata-w3c-json-form": "~1.0.0"
   },
   "scripts": {
     "lint": "eslint .",
-    "test-only": "nyc --reporter=html --reporter=text-summary mocha",
-    "test": "npm run lint && npm run test-only",
+    "test-only": "nyc mocha",
+    "test": "eslint . && nyc mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   }
 }
